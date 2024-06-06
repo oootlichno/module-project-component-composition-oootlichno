@@ -1,10 +1,11 @@
 import React, { useState, useEffect } from 'react';
 import axios from 'axios';
 import { NASA_URL, API_KEY } from '../constants';
+import Content from './Content';
+
 
 export default function App() {
-  const [data, setData] = useState([]);
-  const [currentDataId, setCurrentDataId] = useState(null);
+  const [data, setData] = useState({});
 
   useEffect(() => {
     axios.get(`${NASA_URL}?api_key=${API_KEY}`)
@@ -17,20 +18,13 @@ export default function App() {
 
   return (
     <div id="root">
-   
-    <div className="content">
-      {data && (
-        <>
-          <img className="photo" src={data.url} alt={data.title} />
-          <div className="text">
-            <h2>{data.title}</h2>
-            <p>{data.explanation}</p>
-            <p className="date">{data.date}</p>
-          </div>
-        </>
-      )}
+      <Content 
+        title={data.title} 
+        explanation={data.explanation} 
+        url={data.url} 
+        date={data.date}
+      />
     </div>
-  </div>
-);
+  );
 }
 
