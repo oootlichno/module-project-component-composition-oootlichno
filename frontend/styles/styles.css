@@ -24,6 +24,9 @@ h1, h2 {
   text-align: left;
   margin-bottom: 20px;
 }
+.date {
+  color: #93005a;
+}
 
 p {
   font-family: 'Titillium Web', sans-serif;
@@ -35,6 +38,8 @@ header, footer {
   display: flex;
   flex-direction: column;
   align-items: center;
+  margin-top: 30px;
+  color: #93005a;
 }
 
 .content {
@@ -48,9 +53,7 @@ header, footer {
   width: 800px; 
   height: auto;
 }
-.date {
-  color: #93005a;
-}
+
 
 .text {
   display: flex;
@@ -59,5 +62,5 @@ header, footer {
 
 .text p {
   text-align: left; 
-}
+} 
 
